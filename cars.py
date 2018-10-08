@@ -12,3 +12,13 @@ print(sorted(cars))
 
 print("\nHere is the original list again:")
 print(cars)
+
+# Вывод в обратном порядке
+
+print(cars)
+cars.reverse()
+print("\n")
+print(cars)
+print(len(cars))
+
+

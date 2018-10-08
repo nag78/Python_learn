@@ -23,7 +23,10 @@ print(guests[4].title() +" приходи на обед в пятницу!")
 
 print(guests)
 
-guests_lost=guests.pop()
+print("\nВсего придет гостей:")
+print(len(guests))
+
+guests_lost =guests.pop()
 print ('Извини ' + guests_lost + ' в пятницу не получится :(')
 guests_lost=guests.pop()
 print ('Извини ' + guests_lost + ' в пятницу не получится :(')
