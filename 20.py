@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        squares
+# Name:        20
 # Purpose:
 #
 # Author:      Nag
@@ -9,12 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-# Возведение в степень
+numbers = []
+for number in range(1,21):
+    numbers.append(number)
+    print(number)
 
-squares = []
-for value in range(1,11):
-        squares.append(value **2)
-print(squares)
-
-squares = [value**2 for value in range(1,11)]
-print(squares)
+numbers = [number for number in range(19,0,-2)]
+numbers.reverse
+print(numbers)

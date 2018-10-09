@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        squares
+# Name:        qubes
 # Purpose:
 #
 # Author:      Nag
@@ -9,12 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-# Возведение в степень
+qubes = [value **3 for value in range(1,11)]
+print(qubes)
 
-squares = []
+
+qubes = []
 for value in range(1,11):
-        squares.append(value **2)
-print(squares)
-
-squares = [value**2 for value in range(1,11)]
-print(squares)
+    qubes.append(value **3)
+    print(qubes)
