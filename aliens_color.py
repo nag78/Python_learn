@@ -9,7 +9,11 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-alien_colors = 'yellow'
+alien_color = 'red'
 
-if alien_colors == 'green':
-    print("Игрок заработал 5 очков")
+if alien_color == 'green':
+    print("Игрок заработал 5 очков.")
+elif alien_color == 'yellow':
+    print("Игрок заработал 10 очков.")
+else:
+    print ("Игрок заработал 15 очков.")
