@@ -31,3 +31,13 @@ for requested_topping in requested_toppings:
     else:
         print("Adding " + requested_topping + ".")
 print("\nFinisher making your pizza!")
+
+requested_toppings = []
+
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print("Adding " + requested_topping + ".")
+    print("\nFinished making your pizza!")
+else:
+    print("\nAre you sure you want a plain pizza!")
+
