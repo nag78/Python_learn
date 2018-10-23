@@ -21,5 +21,5 @@ favorite_numbers = {
 
 
 for key , value in favorite_numbers.items():
-    print("\nKey", key)
+    print("\nKey", key.title())
     print("Value", str(value))
