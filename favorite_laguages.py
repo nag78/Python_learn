@@ -45,3 +45,12 @@ if 'erin' not in favorite_languages.keys():
 print("The following languages have been mentioned:")
 for language in set(favorite_languages.values()):
     print(language.title())
+
+
+
+pools = ['nikolay','sarah','svetlana','phil','marina','ilya']
+for name in pools:
+    if name in favorite_languages:
+        print(name.title() + ", спасибо за участие в опросе!")
+    else:
+        print(name.title() + ", пожалуйста примите участие в опросе!")
