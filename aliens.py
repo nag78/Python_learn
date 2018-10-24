@@ -19,8 +19,6 @@ for alien_number in range(30):
         }
     aliens.append(new_alien)
 
-
-
 #смена цветов пришельцев
 
 for alien in aliens[0:3]:
@@ -28,6 +26,10 @@ for alien in aliens[0:3]:
         alien['color'] = 'yellow'
         alien['speed'] = 'medium'
         alien['points'] = 10
+    elif alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+        alien['points'] = 15
 
 #Вывод первых 5 пришельцев
 
