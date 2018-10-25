@@ -12,8 +12,31 @@
 human = {
     'first_name' : 'nikolay',
     'last_name' : 'goltsev',
-    'age' : 40,
+    'age' : '40',
     'city' : 'moscow'
     }
-print ("The is " + human['first_name'].title() + " " + human['last_name'].title() + ".\n")
-print ("He is live in city " + human['city'].title() + " " + str(human['age']) + " year's")
+
+woman = {
+    'first_name' : 'svetlana',
+    'last_name' : 'goltseva',
+    'age' : '34',
+    'city' : 'moscow'
+    }
+
+mother = {
+    'first_name' : 'tamara',
+    'last_name' : 'goltseva',
+    'age' : '80',
+    'city' : 'shadrinsk'
+    }
+
+people = [human,woman,mother]
+
+##print(people)
+
+
+for man in people:
+##    print(man)
+    for key in man.keys():
+        full_info = man[key].title()
+        print(full_info)
