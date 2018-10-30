@@ -36,9 +36,26 @@
 prompt = "\nEnter you want toping."
 prompt += "\n(Enter 'quit' for exit!"
 
-while True:
+##while True:
+##    topings = input(prompt)
+##    if topings == 'quit':
+##        break
+##    else:
+##        print("Plese add me in pizza " + topings.title() + "!")
+
+##active = True
+##while active:
+##    topings = input(prompt)
+##    if topings == 'quit':
+##        active = False
+##    else:
+##        print("Plese add me in pizza " + topings.title() + "!")
+topings = ''
+while topings != 'quit':
     topings = input(prompt)
-    if topings == 'quit':
-        break
-    else:
+    if topings != 'quit':
         print("Plese add me in pizza " + topings.title() + "!")
+
+
+
+
