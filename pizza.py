@@ -1,34 +1,44 @@
-pizzas = ['papa johns','margarita','pepperoni']
+##pizzas = ['papa johns','margarita','pepperoni']
+##
+##friend_pizzas = pizzas[:]
+##pizzas.append('mexican')
+##friend_pizzas.append('gavai')
+##
+##print("My favorite pizzas are:")
+##print(pizzas)
+##
+##print("My friend's favorite pizzas are:")
+##print(friend_pizzas)
+##
+##
+##for pizza in pizzas:
+##    print("I like a " + pizza.title() + "!\n")
+##print ("I really love pizza!")
+##
+##for pizza in friend_pizzas:
+##    print("I like a " + pizza.title() + "!\n")
+##print ("I really love pizza!")
+##
+###Сохранение информации о заказанной пицце
+##
+##pizza = {
+##    'crust':'thick',
+##    'toppings':['mushrooms','extra cheese'],
+##    }
+##
+###Описание заказа.
+##
+##print("You ordered a " + pizza['crust'] + "-crustpizza " +
+##    "with the following toppings:")
+##for topping in pizza['toppings']:
+##    print("\t" + topping)
 
-friend_pizzas = pizzas[:]
-pizzas.append('mexican')
-friend_pizzas.append('gavai')
+prompt = "\nEnter you want toping."
+prompt += "\n(Enter 'quit' for exit!"
 
-print("My favorite pizzas are:")
-print(pizzas)
-
-print("My friend's favorite pizzas are:")
-print(friend_pizzas)
-
-
-for pizza in pizzas:
-    print("I like a " + pizza.title() + "!\n")
-print ("I really love pizza!")
-
-for pizza in friend_pizzas:
-    print("I like a " + pizza.title() + "!\n")
-print ("I really love pizza!")
-
-#Сохранение информации о заказанной пицце
-
-pizza = {
-    'crust':'thick',
-    'toppings':['mushrooms','extra cheese'],
-    }
-
-#Описание заказа.
-
-print("You ordered a " + pizza['crust'] + "-crustpizza " +
-    "with the following toppings:")
-for topping in pizza['toppings']:
-    print("\t" + topping)
+while True:
+    topings = input(prompt)
+    if topings == 'quit':
+        break
+    else:
+        print("Plese add me in pizza " + topings.title() + "!")
