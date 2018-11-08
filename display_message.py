@@ -15,3 +15,8 @@ def display_message(message):
 
 message=input("Message: ")
 display_message(message)
+
+def favorite_book(book):
+    print("Мне нравится " + book.title() +"!")
+book = "Алиса в стране чудес"
+favorite_book(book)
