@@ -9,7 +9,7 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-def make_shirt(size,text):
+def make_shirt(size='L',text='I love Python'):
     """Размер и текст футболки"""
     print("\nMy shirt " + size + ", My print is '" + text.title() + "!'")
-make_shirt(size='XL',text='Hello')
+make_shirt()
