@@ -11,10 +11,25 @@
 
 ##name = input("Please enter your name: ")
 ##print("Hello, " + name + "!")
+##
+##prompt = "If you tell us who you are, we can personalize the messages you see."
+##prompt += "\nWhat is your first name?"
+##
+##name = input(prompt)
+##
+##print("\nHello, " + name + "!")
 
-prompt = "If you tell us who you are, we can personalize the messages you see."
-prompt += "\nWhat is your first name?"
+def get_formated_name(first_name,last_name):
+    """Возвращает аккуратно отформатированное полное имя"""
+    full_name = first_name + ' ' + last_name
+    return full_name.title()
 
-name = input(prompt)
+# Бесконечный цикл
+while True:
+    print("\nPlease tell me your name:")
+    f_name = input("First name: ")
+    l_name = input("Last nane: ")
 
-print("\nHello, " + name + "!")
+
+    formatted_name = get_formated_name(f_name,l_name)
+    print("\nHello, " + formatted_name + "!")
