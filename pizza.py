@@ -33,8 +33,8 @@
 ##for topping in pizza['toppings']:
 ##    print("\t" + topping)
 
-prompt = "\nEnter you want toping."
-prompt += "\n(Enter 'quit' for exit!"
+##prompt = "\nEnter you want toping."
+##prompt += "\n(Enter 'quit' for exit!"
 
 ##while True:
 ##    topings = input(prompt)
@@ -50,11 +50,18 @@ prompt += "\n(Enter 'quit' for exit!"
 ##        active = False
 ##    else:
 ##        print("Plese add me in pizza " + topings.title() + "!")
-topings = ''
-while topings != 'quit':
-    topings = input(prompt)
-    if topings != 'quit':
-        print("Plese add me in pizza " + topings.title() + "!")
+##topings = ''
+##while topings != 'quit':
+##    topings = input(prompt)
+##    if topings != 'quit':
+##        print("Plese add me in pizza " + topings.title() + "!")
+
+def make_pizza(*toppings):
+    """Вывод списка заказанных дополнений"""
+    print(toppings)
+make_pizza('pepperoni')
+make_pizza('mushrooms','green peppers','extra cheese')
+
 
 
 
