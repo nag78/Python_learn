@@ -23,13 +23,12 @@ class Restaurant():
          + " is Open!")
 
 japan_rest = Restaurant('vabi-sabi','asian')
-
 japan_rest.describe_restaurant()
-japan_rest.open_restaurant()
+
 
 ital_rest = Restaurant('el patio', 'italian')
 ital_rest.describe_restaurant()
 
 ua_rest = Restaurant('kumanek','ukranian')
 ua_rest.describe_restaurant()
-ua_rest.open_restaurant()
+
