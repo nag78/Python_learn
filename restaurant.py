@@ -12,6 +12,7 @@ class Restaurant():
     def __init__(self, restaurant_name, cuisine_type):
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.number_served = 0
 
     def describe_restaurant(self):
         print("The restaurant have name " + "'" + self.restaurant_name.title()
@@ -24,7 +25,9 @@ class Restaurant():
 
 japan_rest = Restaurant('vabi-sabi','asian')
 japan_rest.describe_restaurant()
-
+print(str(japan_rest.number_served))
+japan_rest.number_served = 15
+print(str(japan_rest.number_served))
 
 ital_rest = Restaurant('el patio', 'italian')
 ital_rest.describe_restaurant()
@@ -32,3 +35,6 @@ ital_rest.describe_restaurant()
 ua_rest = Restaurant('kumanek','ukranian')
 ua_rest.describe_restaurant()
 
+restaurant = Restaurant('2x2','european')
+restaurant.number_served = 4
+print(str(restaurant.number_served))
