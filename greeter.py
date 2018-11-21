@@ -68,7 +68,7 @@ class User():
             self.login_attempts = 0
 
 new_user = User('nikolay','goltsev','administrators','/home/nag')
-print(new_user.describe_user())
+new_user.describe_user()
 i=1
 for i in range(1,7):
     new_user.increment_login_attempts()
