@@ -19,23 +19,44 @@
 ##
 ##print("\nHello, " + name + "!")
 
-def get_formated_name(first_name,last_name):
-    """Возвращает аккуратно отформатированное полное имя"""
-    full_name = first_name + ' ' + last_name
-    return full_name.title()
+##def get_formated_name(first_name,last_name):
+##    """Возвращает аккуратно отформатированное полное имя"""
+##    full_name = first_name + ' ' + last_name
+##    return full_name.title()
+##
+### Бесконечный цикл
+##while True:
+##    print("\nPlease tell me your name:")
+##    print("(enter 'q' at any time to quit)")
+##
+##    f_name = input("First name: ")
+##    if f_name == 'q':
+##        break
+##
+##    l_name = input("Last nane: ")
+##    if l_name == 'q':
+##        break
+##
+##    formatted_name = get_formated_name(f_name,l_name)
+##    print("\nHello, " + formatted_name + "!")
 
-# Бесконечный цикл
-while True:
-    print("\nPlease tell me your name:")
-    print("(enter 'q' at any time to quit)")
+class User():
+    def __init__(self,first_name,last_name,group,path_profile):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.group = group
+        self.path_profile = path_profile
 
-    f_name = input("First name: ")
-    if f_name == 'q':
-        break
+    def describe_user(self):
+        print("\nUser: " + self.first_name.title() +
+            " " + self.last_name.title())
+        print("Group: " + self.group.title())
+        print("Path: " + self.path_profile)
 
-    l_name = input("Last nane: ")
-    if l_name == 'q':
-        break
+    def greet_user(self):
+        print("Hello, " + self.first_name.title() + " " +
+            self.last_name.title() + "!")
 
-    formatted_name = get_formated_name(f_name,l_name)
-    print("\nHello, " + formatted_name + "!")
+new_user = User('nikolay','goltsev','administrators','/home/nag')
+print(new_user.describe_user())
+print(new_user.greet_user())
