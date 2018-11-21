@@ -49,7 +49,7 @@ class User():
         self.login_attempts = 0
 
     def describe_user(self):
-        print("User: " + self.first_name.title() +
+        print("\nUser: " + self.first_name.title() +
         " " + self.last_name.title())
         print("Group: " + self.group.title())
         print("Path: " + self.path_profile)
@@ -73,6 +73,6 @@ i=1
 for i in range(1,7):
     new_user.increment_login_attempts()
     new_user.reset_login_attempst(5)
-    print(new_user.describe_user())
-    print(new_user.greet_user())
+    new_user.describe_user()
+    new_user.greet_user()
     i += i
