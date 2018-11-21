@@ -26,6 +26,9 @@ class Restaurant():
     def set_number_served(self,served):
         self.number_served = served
 
+    def increment_number_served(self,served):
+        self.number_served += served
+
 japan_rest = Restaurant('vabi-sabi','asian')
 japan_rest.describe_restaurant()
 ##print(str(japan_rest.number_served))
@@ -41,6 +44,8 @@ ua_rest.describe_restaurant()
 restaurant = Restaurant('2x2','european')
 restaurant.describe_restaurant()
 ##restaurant.number_served = 4
-print(str(restaurant.number_served))
+print("Served: " + str(restaurant.number_served))
 restaurant.set_number_served(20)
+print("Served: " + str(restaurant.number_served))
+restaurant.increment_number_served(5)
 print("Served: " + str(restaurant.number_served))
