@@ -36,5 +36,6 @@ ua_rest = Restaurant('kumanek','ukranian')
 ua_rest.describe_restaurant()
 
 restaurant = Restaurant('2x2','european')
+restaurant.describe_restaurant()
 restaurant.number_served = 4
-print(str(restaurant.number_served))
+print("Served: " + str(restaurant.number_served))
