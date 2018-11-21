@@ -56,8 +56,7 @@ class User():
         print("Login Attempts: " + str(self.login_attempts))
 
     def greet_user(self):
-        print("Hello, " + self.first_name.title() + " " +
-        self.last_name.title() + "!")
+        print("Hello, " + self.first_name.title() + " " + self.last_name.title() + "!")
 
     def increment_login_attempts(self):
         self.login_attempts += 1
@@ -67,14 +66,6 @@ class User():
 
         if self.login_attempts > attempts:
             self.login_attempts = 0
-
-
-
-
-
-
-
-
 
 new_user = User('nikolay','goltsev','administrators','/home/nag')
 i=1
