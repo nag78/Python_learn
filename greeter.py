@@ -49,7 +49,7 @@ class User():
         self.login_attempts = 0
 
     def describe_user(self):
-        print("\nUser: " + self.first_name.title() +
+        print("User: " + self.first_name.title() +
         " " + self.last_name.title())
         print("Group: " + self.group.title())
         print("Path: " + self.path_profile)
@@ -68,6 +68,7 @@ class User():
             self.login_attempts = 0
 
 new_user = User('nikolay','goltsev','administrators','/home/nag')
+print(new_user.describe_user())
 i=1
 for i in range(1,7):
     new_user.increment_login_attempts()
