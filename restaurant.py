@@ -21,13 +21,16 @@ class Restaurant():
 
     def open_restaurant(self):
         print("The restaurant " + "'" + self.restaurant_name.title()
-         + " is Open!")
+        + " is Open!")
+
+    def set_number_served(self,served):
+        self.number_served = served
 
 japan_rest = Restaurant('vabi-sabi','asian')
 japan_rest.describe_restaurant()
-print(str(japan_rest.number_served))
-japan_rest.number_served = 15
-print(str(japan_rest.number_served))
+##print(str(japan_rest.number_served))
+##japan_rest.number_served = 15
+##print(str(japan_rest.number_served))
 
 ital_rest = Restaurant('el patio', 'italian')
 ital_rest.describe_restaurant()
@@ -37,5 +40,7 @@ ua_rest.describe_restaurant()
 
 restaurant = Restaurant('2x2','european')
 restaurant.describe_restaurant()
-restaurant.number_served = 4
+##restaurant.number_served = 4
+print(str(restaurant.number_served))
+restaurant.set_number_served(20)
 print("Served: " + str(restaurant.number_served))
