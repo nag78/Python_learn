@@ -38,23 +38,31 @@ class Car():
         """Увеличивает показания одометра с заданным приращением"""
         self.odometer_reading += miles
 
+class Battery():
+    """Простая модель аккумулятора автомобиля"""
+    def __init__ (self, battery_size = 70):
+        """Инициализирует аттрибуты аккумулятора"""
+        self.battery_size = battery_size
+    def describe_battery(self):
+        """Выводит информацию о мощности аккумулятора"""
+        print("This car has a " + str(self.battery_size) + "kWh battery.")
+
 class ElectricCar(Car):
     """Представляет аспект машины, специфические для электромобилей."""
     def __init__(self, make, model, year):
         """Инициализирует атрибуты класса-родителя. Затем инициализируются
         специфичные для электромобиля."""
         super().__init__(make, model, year)
-        self.battery_size = 70
+        self.battery = Battery()
 
-    def describe_battery(self):
-        """Выводит информацию о мощности аккумулятора"""
-        print("This car has a " + str(self.battery_size) + "kWh battery.")
 
 
 my_tesla = ElectricCar('tesla','model s',2016)
 print(my_tesla.get_descriptive_name())
 
-my_tesla.describe_battery()
+my_tesla.battery.describe_battery()
+
+
 
 
 my_used_car = Car('subaru','outback',2013)
