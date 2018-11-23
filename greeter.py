@@ -68,7 +68,18 @@ class User():
         if self.login_attempts > attempts:
             self.login_attempts = 0
 
-new_user = User('nikolay','goltsev','administrators','/home/nag')
+
+class Admin(User):
+    def __init__(self,first_name,last_name,group,path_profile):
+        super().__init__(first_name,last_name,group,path_profile)
+
+        self.privileges = ['R/W messages','add/del users','ban users']
+    def show_priveleges(self):
+        print("\nUser Priveleges: ")
+        for priveleges in self.privileges:
+            print("\t" + priveleges.title())
+
+new_user = Admin('nikolay','goltsev','administrators','/home/nag')
 new_user.describe_user()
 i=1
 for i in range(1,7):
@@ -77,3 +88,4 @@ for i in range(1,7):
     new_user.describe_user()
     new_user.greet_user()
     i += i
+new_user.show_priveleges()
