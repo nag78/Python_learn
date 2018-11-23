@@ -9,36 +9,6 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-##name = input("Please enter your name: ")
-##print("Hello, " + name + "!")
-##
-##prompt = "If you tell us who you are, we can personalize the messages you see."
-##prompt += "\nWhat is your first name?"
-##
-##name = input(prompt)
-##
-##print("\nHello, " + name + "!")
-
-##def get_formated_name(first_name,last_name):
-##    """Возвращает аккуратно отформатированное полное имя"""
-##    full_name = first_name + ' ' + last_name
-##    return full_name.title()
-##
-### Бесконечный цикл
-##while True:
-##    print("\nPlease tell me your name:")
-##    print("(enter 'q' at any time to quit)")
-##
-##    f_name = input("First name: ")
-##    if f_name == 'q':
-##        break
-##
-##    l_name = input("Last nane: ")
-##    if l_name == 'q':
-##        break
-##
-##    formatted_name = get_formated_name(f_name,l_name)
-##    print("\nHello, " + formatted_name + "!")
 
 class User():
     def __init__(self,first_name,last_name,group,path_profile):
@@ -47,6 +17,7 @@ class User():
         self.group = group
         self.path_profile = path_profile
         self.login_attempts = 0
+        self.priveleges = Priveleges()
 
     def describe_user(self):
         print("\nUser: " + self.first_name.title() +
@@ -68,24 +39,32 @@ class User():
         if self.login_attempts > attempts:
             self.login_attempts = 0
 
+class Priveleges():
+    def __init__(self, priveleges=['R/W messages']):
+        self.priveleges = priveleges
+    
+    def show_priveleges(self):
+        ps = self.priveleges
+        print(ps)
+        # print("\nUser Priveleges: ")
+        # for p in ps:
+        #     print("\t" + p)
+
 
 class Admin(User):
     def __init__(self,first_name,last_name,group,path_profile):
         super().__init__(first_name,last_name,group,path_profile)
+        
+        self.priveleges = Priveleges()
+        self.priveleges = ['R/W messages','add/del users','ban users']
 
-        self.privileges = ['R/W messages','add/del users','ban users']
-    def show_priveleges(self):
-        print("\nUser Priveleges: ")
-        for priveleges in self.privileges:
-            print("\t" + priveleges.title())
 
-new_user = Admin('nikolay','goltsev','administrators','/home/nag')
-new_user.describe_user()
-i=1
-for i in range(1,7):
-    new_user.increment_login_attempts()
-    new_user.reset_login_attempst(5)
-    new_user.describe_user()
-    new_user.greet_user()
-    i += i
-new_user.show_priveleges()
+
+nag = Admin('nikolay','goltsev','administrators','/home/nag')
+nag.describe_user()
+nag.greet_user()
+nag.priveleges.show_privelegesshow_priveleges()
+
+ilia = User('ilia','emelyanov','users','/home/ilia')
+ilia.describe_user()
+ilia.priveleges.show_priveleges()
