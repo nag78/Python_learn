@@ -17,7 +17,7 @@ class User():
         self.group = group
         self.path_profile = path_profile
         self.login_attempts = 0
-        self.priveleges = Priveleges()
+##        self.priveleges = Priveleges()
 
     def describe_user(self):
         print("\nUser: " + self.first_name.title() +
@@ -40,7 +40,7 @@ class User():
             self.login_attempts = 0
 
 class Priveleges():
-    def __init__(self, priveleges=['R/W messages','','']):
+    def __init__(self, priveleges=['R/W messages','add/del users','ban users']):
         self.priveleges = priveleges
 
     def show_priveleges(self):
@@ -53,7 +53,7 @@ class Admin(User):
         super().__init__(first_name,last_name,group,path_profile)
 
         self.priveleges = Priveleges()
-        self.priveleges = ['R/W messages','add/del users','ban users']
+##        self.priveleges = ['R/W messages','add/del users','ban users']
 
 
 
@@ -64,4 +64,4 @@ nag.priveleges.show_priveleges()
 
 ilia = User('ilia','emelyanov','users','/home/ilia')
 ilia.describe_user()
-ilia.priveleges.show_priveleges()
+##ilia.priveleges.show_priveleges()
