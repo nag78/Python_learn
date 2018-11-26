@@ -17,9 +17,7 @@ class User():
         self.group = group
         self.path_profile = path_profile
         self.login_attempts = 0
-        priveleges = ['R/W messages']
-        self.priveleges = Priveleges(priveleges)
-
+##        self.priveleges = Priveleges()
 
     def describe_user(self):
         print("\nUser: " + self.first_name.title() +
