@@ -29,7 +29,6 @@ class Restaurant():
     def increment_number_served(self,served):
         self.number_served += served
 
-
 class IceCreamStand(Restaurant):
     def __init__(self, restaurant_name, cuisine_type):
 
@@ -39,31 +38,3 @@ class IceCreamStand(Restaurant):
         print("\nIce flavours: ")
         for flavour in self.flavours:
             print(flavour)
-
-
-
-
-ice_rest = IceCreamStand('ice','icecream')
-ice_rest.describe_restaurant()
-ice_rest.iceflavour()
-
-japan_rest = Restaurant('vabi-sabi','asian')
-japan_rest.describe_restaurant()
-##print(str(japan_rest.number_served))
-##japan_rest.number_served = 15
-##print(str(japan_rest.number_served))
-
-ital_rest = Restaurant('el patio', 'italian')
-ital_rest.describe_restaurant()
-
-ua_rest = Restaurant('kumanek','ukranian')
-ua_rest.describe_restaurant()
-
-restaurant = Restaurant('2x2','european')
-restaurant.describe_restaurant()
-##restaurant.number_served = 4
-print("Served: " + str(restaurant.number_served))
-restaurant.set_number_served(20)
-print("Served: " + str(restaurant.number_served))
-restaurant.increment_number_served(5)
-print("Served: " + str(restaurant.number_served))
