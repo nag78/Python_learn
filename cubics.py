@@ -21,7 +21,7 @@ class Die():
         sides = randint(1,self.sides)
         print("Sides: " + str(sides))
 
-shoot = Die(20)
+shoot = Die()
 i=0
 for i in range(0,10):
     shoot.roll_die()
