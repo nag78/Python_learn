@@ -26,5 +26,6 @@ while True:
         sum = num_1 + num_2
     except ValueError:
         print("Введеные символы не являются числом.")
-    print("Сумма: " + str(sum))
+    else:
+        print("Сумма: " + str(sum))
 
