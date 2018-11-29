@@ -11,10 +11,12 @@
 def line_count(filename,word):
 
     with open(filename) as f_obj:
-        lines = f_obj.readlines()
-        for line in lines:
-            count = line.strip().lower().count(word)
-            count += count
-    print(str(count))
 
-line_count('legends.txt','of')
+        for line in f_obj:
+            line = line.lower()
+            count = line.count(word)
+            print(line.strip())
+            count += count
+        print(str(count))
+
+line_count('alice.txt'," project ")
