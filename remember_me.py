@@ -1,5 +1,7 @@
 import json
 def greet_user():
+    """Приветствует пользователя по имени"""
+
     filename = 'username.json'
     try:
         with open(filename) as f_obj:
