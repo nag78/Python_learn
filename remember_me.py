@@ -15,7 +15,7 @@ def get_new_username():
     """Запрашивает хранимое имя пользоватля."""
     username = input("What is your name? ")
     filename = 'username.json'
-    with open(filename) as f_obj:
+    with open(filename, 'w') as f_obj:
         json.dump(username,f_obj)
     return username
 
