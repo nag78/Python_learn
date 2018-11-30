@@ -1,8 +1,6 @@
 import json
 
-file = 'f_number.json'
-prompt = "Enter your favorite number. "
-num = input(prompt)
-with open(file, 'w') as f_obj:
-    print(num)
-    json.dump(num,file)
+num = input("Ваше любимое число? ")
+filename = 'f_number.json'
+with open(filename, 'w') as f_obj:
+    json.dump(num,f_obj)
