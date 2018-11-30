@@ -23,7 +23,14 @@ def greet_user():
     """Приветствует пользователя по имени"""
     username = get_stored_username()
     if username:
-        print("Welcome back, " + username + "!")
+        prompt = "\nYou are "  + username + "!"
+        prompt += "\nyes or no"
+        ask = input(prompt)
+        if ask == 'yes':
+            print("Welcome back, " + username + "!")
+        else:
+            username = get_new_username()
+            print("We'll remember you when you come back, " + username + "!")
     else:
         username = get_new_username()
         print("We'll remember you when you come back, " + username + "!")
