@@ -31,11 +31,17 @@ def run_game():
             star = Star(screen)
 # Введение случайного элемента в размещении
             r_num = randint(-10,10)
-            star.x = star_width + 2 * star_width * star_number
-            star.y = star_heigth + 2 * star_heigth * row_number
-            star.rect.x = star.x * r_num
-            star.rect.y = star.y * r_num
+            star.x = (star_width + 2 * star_width * star_number) * r_num
+            star.y = (star_heigth + 2 * star_heigth * row_number) * r_num
+            if star.x <= game_set.screen_width:
+                if star.x >= 0:
+                    star.rect.x = star.x
+            if star.y <= game_set.screen_height:
+                if star.y >= 0:
+                    star.rect.y = star.y
             stars.add(star)
+
+
 
 # Основной цикл игры
     while True:
@@ -45,5 +51,6 @@ def run_game():
                 sys.exit()
         screen.fill(game_set.bg_color)
         stars.draw(screen)
+
         pygame.display.flip()
 run_game()
