@@ -25,6 +25,8 @@ def check_keydown_events(event,rocket):
         rocket.moving_up = True
     elif event.key == pygame.K_DOWN:
         rocket.moving_down = True
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def check_keyup_events(event,rocket):
     """
