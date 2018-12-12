@@ -6,13 +6,15 @@ class Rocket():
         Инициализация ракеты
         """
         self.screen = screen
-        self.image = pygame.image.load('rocket.png')
+        self.image = pygame.image.load('rocket_horizont.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        #Новая ракета появляется по центру
-        self.rect.centerx = self.screen_rect.centerx
+        # Новая ракета появляется по центру
+        # self.rect.centerx = self.screen_rect.centerx
+        self.rect.left = self.screen_rect.left
         self.rect.centery = self.screen_rect.centery
+        
 
         # Флаг перемещения 
         self.moving_right = False
