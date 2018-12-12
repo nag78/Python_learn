@@ -26,6 +26,12 @@ class Rocket():
         """
         if self.moving_right:
             self.rect.centerx += 1
+        elif self.moving_left:
+            self.rect.centerx -= 1
+        elif self.moving_up:
+            self.rect.centery -= 1
+        elif self.moving_down:
+            self.rect.centery += 1
 
     def blitme(self):
         """
