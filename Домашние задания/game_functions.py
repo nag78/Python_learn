@@ -17,10 +17,11 @@ def check_keydown_events(event,rocket):
     """
     Обработка нажатий клавиш
     """
+    # Для текущего проекта движения право-лево заглушены
     if event.key == pygame.K_RIGHT:
-        rocket.moving_right = True
+        rocket.moving_right = False
     elif event.key == pygame.K_LEFT:
-        rocket.moving_left = True
+        rocket.moving_left = False
     elif event.key == pygame.K_UP:
         rocket.moving_up = True
     elif event.key == pygame.K_DOWN:
