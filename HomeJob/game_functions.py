@@ -10,7 +10,7 @@ def check_events(settings,screen,rocket,bullets):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, settings, rocket)
+            check_keydown_events(event, settings,screen, rocket, bullets)
         elif event.type == pygame.KEYUP:
             check_keyup_events(event,rocket)
 

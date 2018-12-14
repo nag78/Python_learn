@@ -2,7 +2,7 @@ import sys
 import pygame
 from settings import Settings
 from rocket import Rocket
-import game_functions as gf
+import game_functions as gf   
 from pygame.sprite import Group
 pygame.init()
 
