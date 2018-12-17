@@ -6,7 +6,7 @@ class Rocket():
         Инициализация ракеты
         """
         self.screen = screen
-        self.image = pygame.image.load('rocket_horizont.png')
+        self.image = pygame.image.load('.\images\\rocket_horizont.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
