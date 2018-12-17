@@ -1,7 +1,7 @@
 import sys
 import pygame
-from star import Star
-from random import randint
+from blob import Blob
+# from random import randint
 
 
 def check_events():
@@ -47,14 +47,14 @@ def check_keydown_events(event, settings, screen, rocket):
 #         rocket.moving_down = False
 
 
-def update_screen(settings, screen, stars):
+def update_screen(settings, screen, blobs):
     # Перерисовка при каждом цикле
     screen.fill(settings.bg_color)
     # Пули выводятся позади изображений коробля и пришельцев
     # rocket.blitme()
-    # star.blitme()
-    for star in stars:
-        stars.draw(screen)
+    # blob.blitme()
+    for blob in blobs:
+        blobs.draw(screen)
     # Отобрвжение последнего прорисованного экрана.
     pygame.display.flip()
 
@@ -70,23 +70,23 @@ def update_screen(settings, screen, stars):
 #             bullets.remove(bullet)
 #             # print(len(bullets))
 
-def create_stars(settings, screen, stars):
+def create_blobs(settings, screen, blobs):
     # Расчет сетки
-    star = Star(settings, screen)
-    star_width = star.rect.width
-    star_heigth = star.rect.height
-    avaliable_x = settings.screen_width - 2 * star_width
-    avaliable_y = settings.screen_height - 2 * star_heigth
-    number_stars_x = int(avaliable_x / (2 * star_width))
-    number_rows = int(avaliable_y / (2 * star_heigth))
+    blob = Blob(settings, screen)
+    blob_width = blob.rect.width
+    blob_heigth = blob.rect.height
+    avaliable_x = settings.screen_width - 2 * blob_width
+    avaliable_y = settings.screen_height - 2 * blob_heigth
+    number_blobs_x = int(avaliable_x / (2 * blob_width))
+    number_rows = int(avaliable_y / (2 * blob_heigth))
 # Размещение звезд на сетке.
     for row_number in range(number_rows):
-        for star_number in range(number_stars_x):
-            star = Star(settings, screen)
+        for blob_number in range(number_blobs_x):
+            blob = Blob(settings, screen)
 # Введение случайного элемента в размещении
-            r_num = randint(-10, 10)
-            star.x = (star_width + 2 * star_width * star_number)
-            star.y = (star_heigth + 2 * star_heigth * row_number)
-            star.rect.x = star.x * r_num
-            star.rect.y = star.y * r_num
-            stars.add(star)
+            # r_num = randint(-10, 10)
+            blob.x = (blob_width + 2 * blob_width * blob_number)
+            blob.y = (blob_heigth + 2 * blob_heigth * row_number)
+            blob.rect.x = blob.x
+            blob.rect.y = blob.y
+            blobs.add(blob)

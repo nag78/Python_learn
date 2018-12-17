@@ -14,7 +14,7 @@ def run_game():
     screen = pygame.display.set_mode(
         (settings.screen_width, settings.screen_height))
     blobs = Group()
-    gf.create_stars(settings, screen, blobs)
+    gf.create_blobs(settings, screen, blobs)
 
 
 # Основной цикл игры
