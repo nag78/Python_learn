@@ -22,6 +22,7 @@ def run_game():
         # Обработка событий клавиатуры и мышы
         gf.check_events()
         gf.update_screen(settings, screen, blobs)
+        gf.update_blobs(settings, screen, blobs)
         blobs.draw(screen)
 
 

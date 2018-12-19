@@ -26,3 +26,17 @@ class Blob(Sprite):
     def blitme(self):
         # Вывод звезды в текущем положении
         self.screen.blit(self.image, self.rect)
+
+    def update(self):
+        """
+        Перемещение вниз
+        """
+        self.y += 5
+        self.rect.y = self.y
+
+    def check_edge(self):
+        """Возвращает True если капля дошла до края
+        """
+        screen_rect = self.screen.get_rect()
+        if self.rect.y >= screen_rect.height:
+            return True

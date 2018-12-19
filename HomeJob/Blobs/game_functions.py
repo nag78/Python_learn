@@ -73,20 +73,32 @@ def update_screen(settings, screen, blobs):
 def create_blobs(settings, screen, blobs):
     # Расчет сетки
     blob = Blob(settings, screen)
+    blob.y = 0
     blob_width = blob.rect.width
-    blob_heigth = blob.rect.height
     avaliable_x = settings.screen_width - 2 * blob_width
-    avaliable_y = settings.screen_height - 2 * blob_heigth
     number_blobs_x = int(avaliable_x / (2 * blob_width))
-    number_rows = int(avaliable_y / (2 * blob_heigth))
-# Размещение звезд на сетке.
-    for row_number in range(number_rows):
-        for blob_number in range(number_blobs_x):
-            blob = Blob(settings, screen)
+    # Размещение звезд на сетке.
+    for blob_number in range(number_blobs_x):
+        blob = Blob(settings, screen)
 # Введение случайного элемента в размещении
-            # r_num = randint(-10, 10)
-            blob.x = (blob_width + 2 * blob_width * blob_number)
-            blob.y = (blob_heigth + 2 * blob_heigth * row_number)
-            blob.rect.x = blob.x
-            blob.rect.y = blob.y
-            blobs.add(blob)
+        # r_num = randint(-10, 10)
+        blob.x = (blob_width + 2 * blob_width * blob_number)
+        blob.rect.x = blob.x
+        blobs.add(blob)
+
+
+def update_blobs(settings, screen, blobs):
+    """Обновление позиции всех капель.
+    """
+    check_bloob_edges(settings, screen, blobs)
+    blobs.update()
+
+
+def check_bloob_edges(settings, screen, blobs):
+    """Реакция на достижение каплями края
+    """
+    for blob in blobs.sprites():
+        if blob.check_edge():
+            blobs.remove(blob)
+            create_blobs(settings, screen, blobs)
+            break
