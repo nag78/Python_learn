@@ -1,6 +1,6 @@
 import sys
 import pygame
-from ball import Ball
+# from ball import Ball
 
 
 def check_events(settings, screen, shikari, ball):
@@ -54,14 +54,14 @@ def update_screen(settings, screen, shikari, balls):
     # Перерисовка при каждом цикле
     screen.fill(settings.bg_color)
     # Пули выводятся позади изображений коробля и пришельцев
-    # for ball in ball.sprites():
-    #     ball.draw_ball()
+    for ball in balls.sprites():
+        ball.draw_ball()
     shikari.blitme()
     # Отобрвжение последнего прорисованного экрана.
     pygame.display.flip()
 
 
-def update_ball(screen, balls):
+def update_balls(screen, balls):
     """Обновление позиции мяча и уничтожение старых мячей.
     """
     balls.update()
@@ -69,5 +69,5 @@ def update_ball(screen, balls):
     # Удаление мяча, вышедшего за край экрана.
     for ball in balls.copy():
         if ball.rect.bottom >= scr_rect.bottom:
-             ball.remove(balls)
-    #         # print(len(ball))
+            balls.remove(ball)
+            # print(len(ball))
