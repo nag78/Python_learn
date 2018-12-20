@@ -25,6 +25,8 @@ def run_game():
         # Отслеживание событий клавиатуры и мышы
         gf.check_events(gs, screen, shikari, balls)
         shikari.update()
+        for ball in balls:
+                gf.update_balls(screen, balls)
         gf.update_screen(gs, screen, shikari, ball)
 
 
