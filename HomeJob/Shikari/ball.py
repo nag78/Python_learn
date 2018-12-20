@@ -32,8 +32,7 @@ class Ball(Sprite):
         """Перемещение мяча вниз.
         """
         # Обновление позиции мяча
-        self.y += self.speed_factor
-
+        self.y += self.setings.ball_speed
         # Обновление позиции прямоугольника мяча
         self.rect.y = self.y
 

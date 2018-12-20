@@ -13,7 +13,7 @@ def run_game():
     screen = pygame.display.set_mode((gs.screen_width, gs.screen_height))
     pygame.display.set_caption("Shikari")
 
-    # Создание ракеты
+    # Создание игрока
     shikari = Shikari(screen)
     ball = Ball(gs, screen)
 
@@ -25,8 +25,7 @@ def run_game():
         # Отслеживание событий клавиатуры и мышы
         gf.check_events(gs, screen, shikari, balls)
         shikari.update()
-        for ball in balls:
-                gf.update_balls(screen, balls)
+        ball.update()
         gf.update_screen(gs, screen, shikari, ball)
 
 
