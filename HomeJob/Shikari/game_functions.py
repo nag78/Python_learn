@@ -50,12 +50,10 @@ def check_keyup_events(event, shikari):
     #     shikari.moving_down = False
 
 
-def update_screen(settings, screen, shikari, balls):
+def update_screen(settings, screen, shikari, ball):
     # Перерисовка при каждом цикле
     screen.fill(settings.bg_color)
-    # Пули выводятся позади изображений коробля и пришельцев
-    for ball in balls.sprites():
-        ball.draw_ball()
+    ball.blitme()
     shikari.blitme()
     # Отобрвжение последнего прорисованного экрана.
     pygame.display.flip()

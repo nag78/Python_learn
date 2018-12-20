@@ -3,6 +3,7 @@ from settings import Settings
 from shikari import Shikari
 import game_functions as gf
 from pygame.sprite import GroupSingle
+from ball import Ball
 pygame.init()
 
 
@@ -14,6 +15,7 @@ def run_game():
 
     # Создание ракеты
     shikari = Shikari(screen)
+    ball = Ball(gs, screen)
 
     # Создание группы хранения пуль
     balls = GroupSingle()
@@ -23,8 +25,7 @@ def run_game():
         # Отслеживание событий клавиатуры и мышы
         gf.check_events(gs, screen, shikari, balls)
         shikari.update()
-        gf.update_balls(screen, balls)
-        gf.update_screen(gs, screen, shikari, balls)
+        gf.update_screen(gs, screen, shikari, ball)
 
 
 run_game()

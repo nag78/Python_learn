@@ -11,18 +11,21 @@ class Ball(Sprite):
         """
         super().__init__()
         self.screen = screen
+        self.setings = settings
 
-        # Создание пули в позиции (0,0) и назначение правильной позиции
+        # Загрузка изображения мяча и задание начальной позиции
+        self.image = pygame.image.load('.\\images\\ball.png')
+        self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
-        self.rect = pygame.Rect(0, 0, settings.bullet.width, settings.height)
-        r_num = randint(0, self.screen_rect.rigth)
-        self.rect.left = (self.screen_rect.left - self.rect.centerx) + r_num
-        self.rect.top = screen.rect.top
+
+        r_num = randint(10, 1000)
+        self.rect.x = self.rect.width + r_num
+        self.rect.y = self.rect.height
 
         # Позиция меча в вещественном формате.
-        self.y = float(self.y)
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
 
-        self.color = settings.ball_color
         self.speed_factor = settings.ball_speed
 
     def update(self):
@@ -33,6 +36,11 @@ class Ball(Sprite):
 
         # Обновление позиции прямоугольника мяча
         self.rect.y = self.y
+
+    def blitme(self):
+        """Вывод пришельца на экран
+        """
+        self.screen.blit(self.image, self.rect)
 
     def draw_ball(self):
         """Вывод мяча на экран
