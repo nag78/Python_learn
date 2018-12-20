@@ -1,0 +1,30 @@
+import pygame
+from settings import Settings
+from shikari import Shikari
+import game_functions as gf
+from pygame.sprite import GroupSingle
+pygame.init()
+
+
+def run_game():
+    # Инициализация игры и создание объект экрана
+    gs = Settings()
+    screen = pygame.display.set_mode((gs.screen_width, gs.screen_height))
+    pygame.display.set_caption("Shikari")
+
+    # Создание ракеты
+    shikari = Shikari(screen)
+
+    # Создание группы хранения пуль
+    balls = GroupSingle()
+
+    # Запуск основного цикла игры
+    while True:
+        # Отслеживание событий клавиатуры и мышы
+        gf.check_events(gs, screen, shikari, balls)
+        shikari.update()
+        # gf.update_bullets(screen, ball)
+        gf.update_screen(gs, screen, shikari, balls)
+
+
+run_game()
