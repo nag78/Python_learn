@@ -1,6 +1,6 @@
 import sys
 import pygame
-# from ball import Ball
+from ball import Ball
 
 
 def check_events(settings, screen, shikari, ball):
@@ -66,6 +66,13 @@ def update_balls(screen, balls):
     scr_rect = screen.get_rect()
     # Удаление мяча, вышедшего за край экрана.
     for ball in balls.copy():
-        if ball.rect.bottom >= scr_rect.bottom:
+        if ball.rect.bottom >= scr_rect.height:
             balls.remove(ball)
             # print(len(ball))
+
+
+def create_ball(settings, screen, ball):
+    """Создание мяча.
+    """
+    ball = Ball(settings, screen)
+    ball.add(ball)
