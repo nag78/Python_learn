@@ -66,9 +66,9 @@ def update_balls(screen, balls):
     scr_rect = screen.get_rect()
     # Удаление мяча, вышедшего за край экрана.
     for ball in balls.copy():
-        if ball.rect.bottom >= scr_rect.height:
+        if ball.rect.bottom >= scr_rect.bottom:
             balls.remove(ball)
-            # print(len(ball))
+            print(len(ball))
 
 
 def create_ball(settings, screen, ball):
