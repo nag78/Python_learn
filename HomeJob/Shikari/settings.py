@@ -12,4 +12,4 @@ class Settings():
         self.ball_width = 50
         self.ball_height = 50
         self.ball_color = (0, 0, 0)
-        self.ball_speed = 3
+        self.ball_speed = 1.5
