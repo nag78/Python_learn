@@ -1,7 +1,7 @@
-import sys
 import pygame
 from settings import Settings
 from blob import Blob
+import game_function as gf
 
 
 def run_game():
@@ -17,14 +17,8 @@ def run_game():
     # Запуск основного цикла игры.
     while True:
         # Отслеживание событий клавиатуры и мыши
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        # При каждом проходе перерисовывается экран
-        screen.fill(settings.bg_color)
-        blob.blitme()
-        # Отображение последнего прорисованного экрана
-        pygame.display.flip()
+        gf.check_events()
+        gf.update_screen(settings, screen, blob)
 
 
 run_game()
