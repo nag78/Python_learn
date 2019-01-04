@@ -1,6 +1,7 @@
 import sys
 import pygame
 from settings import Settings
+from blob import Blob
 
 
 def run_game():
@@ -11,7 +12,8 @@ def run_game():
                                       settings.screen_width,
                                       settings.screen_height))
     pygame.display.set_caption("Дождь")
-
+    # Создание капли
+    blob = Blob(settings, screen)
     # Запуск основного цикла игры.
     while True:
         # Отслеживание событий клавиатуры и мыши
@@ -20,6 +22,7 @@ def run_game():
                 sys.exit()
         # При каждом проходе перерисовывается экран
         screen.fill(settings.bg_color)
+        blob.blitme()
         # Отображение последнего прорисованного экрана
         pygame.display.flip()
 
