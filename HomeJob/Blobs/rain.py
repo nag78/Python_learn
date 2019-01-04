@@ -1,29 +1,22 @@
+import sys
 import pygame
-from pygame.sprite import Group
-from settings import Settings
-import game_functions as gf
 
 
 def run_game():
-    """
-    Основное тело игры.
-    """
+    # Инициализирует игру и создает объект
     pygame.init()
-    pygame.display.set_caption("Rain")
-    settings = Settings()
-    screen = pygame.display.set_mode(
-        (settings.screen_width, settings.screen_height))
-    blobs = Group()
-    gf.create_blobs(settings, screen, blobs)
+    screen = pygame.display.set_mode((1200, 800))
+    pygame.display.set_caption("Дождь")
 
-
-# Основной цикл игры
+    # Запуск основного цикла игры.
     while True:
-        # Обработка событий клавиатуры и мышы
-        gf.check_events()
-        gf.update_screen(settings, screen, blobs)
-        gf.update_blobs(settings, screen, blobs)
-        blobs.draw(screen)
+        # Отслеживание событий клавиатуры и мыши
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+        # Отображение последнего прорисованного экрана
+        pygame.display.flip()
 
 
 run_game()
