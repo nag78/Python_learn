@@ -46,3 +46,4 @@ def update_blobs(settings, screen, blobs):
     """Обновление позиции всех капель."""
 
     blobs.update()
+
