@@ -40,3 +40,9 @@ def create_blobs_line(settings, screen, blobs):
         blob.x = blob_width + 2 * blob_width * blob_number
         blob.rect.x = blob.x
         blobs.add(blob)
+
+
+def update_blobs(settings, screen, blobs):
+    """Обновление позиции всех капель."""
+
+    blobs.update()

@@ -22,6 +22,7 @@ def run_game():
     while True:
         # Отслеживание событий клавиатуры и мыши
         gf.check_events()
+        gf.update_blobs(settings, screen, blobs)
         gf.update_screen(settings, screen, blobs)
 
 
