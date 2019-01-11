@@ -59,7 +59,7 @@ def update_screen(settings, screen, shikari, ball):
     pygame.display.flip()
 
 
-def update_balls(screen, balls):
+def update_balls(settings, screen, ball, balls):
     """Обновление позиции мяча и уничтожение старых мячей.
     """
     balls.update()
@@ -69,6 +69,7 @@ def update_balls(screen, balls):
         if ball.rect.bottom >= scr_rect.bottom:
             balls.remove(ball)
             print(len(ball))
+            create_ball(settings, screen, ball)
 
 
 def create_ball(settings, screen, ball):
