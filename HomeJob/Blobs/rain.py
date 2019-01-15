@@ -1,7 +1,8 @@
 import pygame
 from settings import Settings
-from blob import Blob
+# from blob import Blob
 import game_function as gf
+from pygame.sprite import Group
 
 
 def run_game():
@@ -12,13 +13,17 @@ def run_game():
                                       settings.screen_width,
                                       settings.screen_height))
     pygame.display.set_caption("Дождь")
-    # Создание капли
-    blob = Blob(settings, screen)
+    # Создание группы капель
+    blobs = Group()
+    # Создание ряда капель
+    gf.create_blobs_line(settings, screen, blobs)
+
     # Запуск основного цикла игры.
     while True:
         # Отслеживание событий клавиатуры и мыши
         gf.check_events()
-        gf.update_screen(settings, screen, blob)
+        gf.update_blobs(settings, screen, blobs)
+        gf.update_screen(settings, screen, blobs)
 
 
 run_game()

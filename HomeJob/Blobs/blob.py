@@ -22,3 +22,7 @@ class Blob(Sprite):
     def blitme(self):
         """ Вывод на экран в текущем положении"""
         self.screen.blit(self.image, self.rect)
+
+    def update(self):
+        """Падение капель."""
+        self.rect.y += self.settings.drop_speed
