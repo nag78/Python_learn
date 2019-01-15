@@ -1,6 +1,7 @@
 import sys
 import pygame
 from ball import Ball
+from random import randint
 
 
 def check_events(settings, screen, shikari, ball):
@@ -25,13 +26,6 @@ def check_keydown_events(event, settings, screen, shikari, ball):
         shikari.moving_right = True
     elif event.key == pygame.K_LEFT:
         shikari.moving_left = True
-    # elif event.key == pygame.K_UP:
-    #     shikari.moving_up = True
-    # elif event.key == pygame.K_DOWN:
-    #     shikari.moving_down = True
-    # elif event.key == pygame.K_SPACE:
-    #     new_bullet = Bullet(settings, screen, shikari)
-    #     ball.add(new_bullet)
     elif event.key == pygame.K_q:
         sys.exit()
 
@@ -44,22 +38,18 @@ def check_keyup_events(event, shikari):
         shikari.moving_right = False
     elif event.key == pygame.K_LEFT:
         shikari.moving_left = False
-    # elif event.key == pygame.K_UP:
-    #     shikari.moving_up = False
-    # elif event.key == pygame.K_DOWN:
-    #     shikari.moving_down = False
 
 
-def update_screen(settings, screen, shikari, ball):
+def update_screen(settings, screen, shikari, balls):
     # Перерисовка при каждом цикле
     screen.fill(settings.bg_color)
-    ball.blitme()
+    balls.draw(screen)
     shikari.blitme()
     # Отобрвжение последнего прорисованного экрана.
     pygame.display.flip()
 
 
-def update_balls(settings, screen, ball, balls):
+def update_balls(settings, screen, balls):
     """Обновление позиции мяча и уничтожение старых мячей.
     """
     balls.update()
@@ -69,11 +59,14 @@ def update_balls(settings, screen, ball, balls):
         if ball.rect.bottom >= scr_rect.bottom:
             balls.remove(ball)
             print(len(ball))
-            create_ball(settings, screen, ball)
+            create_ball(settings, screen, balls)
 
 
-def create_ball(settings, screen, ball):
+def create_ball(settings, screen, balls):
     """Создание мяча.
     """
     ball = Ball(settings, screen)
-    ball.add(ball)
+    r_num = randint(10, 1000)
+    ball.x = ball.width + r_num
+    ball.y = ball.height
+    balls.add(ball)
