@@ -2,8 +2,7 @@ import pygame
 from settings import Settings
 from shikari import Shikari
 import game_functions as gf
-from pygame.sprite import GroupSingle
-from ball import Ball
+from pygame.sprite import Group
 pygame.init()
 
 
@@ -15,19 +14,17 @@ def run_game():
 
     # Создание игрока
     shikari = Shikari(screen)
-    ball = Ball(gs, screen)
 
     # Создание группы хранения пуль
-    balls = GroupSingle()
+    balls = Group()
 
     # Запуск основного цикла игры
     while True:
         # Отслеживание событий клавиатуры и мышы
         gf.check_events(gs, screen, shikari, balls)
         shikari.update()
-        gf.update_balls(screen, balls)
-        ball.update()
-        gf.update_screen(gs, screen, shikari, ball)
+        gf.update_balls(gs, screen, balls)
+        gf.update_screen(gs, screen, shikari, balls)
 
 
 run_game()

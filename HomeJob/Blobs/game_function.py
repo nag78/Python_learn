@@ -44,6 +44,12 @@ def create_blobs_line(settings, screen, blobs):
 
 def update_blobs(settings, screen, blobs):
     """Обновление позиции всех капель."""
-
+    check_lines_edge(settings, screen, blobs)
     blobs.update()
 
+
+def check_lines_edge(settings, screen, blobs):
+    for blob in blobs.sprites():
+        if blob.check_edges():
+            blobs.empty()
+            create_blobs_line(settings, screen, blobs)

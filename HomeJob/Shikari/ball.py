@@ -41,7 +41,4 @@ class Ball(Sprite):
         """
         self.screen.blit(self.image, self.rect)
 
-    def draw_ball(self):
-        """Вывод мяча на экран
-        """
-        pygame.draw.circle(self.screen, self.color, self.rect)
+

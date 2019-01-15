@@ -26,3 +26,9 @@ class Blob(Sprite):
     def update(self):
         """Падение капель."""
         self.rect.y += self.settings.drop_speed
+
+    def check_edges(self):
+        """Проверка достижения края экрана"""
+        screen_rect = self.screen.get_rect()
+        if self.rect.y >= screen_rect.bottom:
+            return True
