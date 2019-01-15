@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 
 
-x_values = [1, 2, 3, 4 ,5]
-y_values = [1, 4, 9, 16, 25]
-plt.scatter(x_values, y_values, s=20)
+x_values = list(range(1, 1001))
+y_values = [x**2 for x in x_values]
+plt.scatter(x_values, y_values, c = y_values,
+            cmap = plt.cm.Blues, edgecolor = 'none', s=40)
 
 # Назначение заголовка диаграммы и осей меток.
 plt.title("Square Numbers", fontsize = 24)
