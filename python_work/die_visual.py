@@ -22,9 +22,9 @@ for value in range(1, die.num_sides+1):
 hist = pygal.Bar()
 
 hist.title = "Results of rolling one D6 1000 times."
-hist.x_labels = ['1', '2', '3', '4', '5', '6']
-hist.x_labels = "Result"
-hist.y_labels = "Frequency of Result"
+hist.x_labels = ['1', '2', '3', '4', '5', '6', 'Result']
+# hist.x_labels = "Result"
+hist.y_labels = frequencies
 
 hist.add('D6', frequencies)
 hist.render_in_browser()
