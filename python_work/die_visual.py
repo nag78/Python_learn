@@ -27,4 +27,5 @@ hist.x_labels = ['1', '2', '3', '4', '5', '6', 'Result']
 hist.y_labels = frequencies
 
 hist.add('D6', frequencies)
+hist.render_to_file('die_visual.svg')
 hist.render_in_browser()
