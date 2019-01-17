@@ -18,7 +18,6 @@ for value in range(1, die.num_sides+1):
     frequencies.append(frequency)
 
 # Визуализация результатов.
-
 hist = pygal.Bar()
 
 hist.title = "Results of rolling one D6 1000 times."
