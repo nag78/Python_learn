@@ -17,14 +17,14 @@ with open(fname) as f:
     for row in reader:
         country = row[0]
         try:
-            forest = int(float(row[60]))
+            forest = round(float(row[60]), 2)
         except ValueError:
             print("error data")
         else:
             code = get_country_code(country)
             if code:
                 forestes[code] = forest
-print(forestes)
+# print(forestes)
 wm_style = ST()
 wm = pygal.maps.world.World(style=wm_style)
 wm.title = 'Forest area (% of land area) in 2018, by Country'
