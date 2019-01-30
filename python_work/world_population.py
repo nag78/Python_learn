@@ -8,7 +8,7 @@ from pygal.style import CleanStyle as RBS
 filename = '.\\population_data.json'
 with open(filename) as f:
     pop_data = json.load(f)
-
+print(pop_data)
 # Построение словаря с данными численности населения
 cc_populations = {}
 for pop_dict in pop_data:
@@ -27,8 +27,8 @@ for pop_dict in pop_data:
                     cc_pops_2[cc] = pop
                 else:
                     cc_pops_3[cc] = pop
-        else:
-            print(country)
+        # else:
+        #     print(country)
             # Проверка количества стран на каждом уровне
             # print(len(cc_pops_1), len(cc_pops_2), len(cc_pops_3))
 
