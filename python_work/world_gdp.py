@@ -4,7 +4,6 @@ from country_code import get_country_code
 from pygal.style import CleanStyle as RBS
 
 
-
 # Список заполяется данными
 filename = '.\\data\\gdp_json.json'
 with open(filename) as f:
