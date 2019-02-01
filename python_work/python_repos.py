@@ -19,8 +19,8 @@ names, plot_dicts = [], []
 for repo_dict in repo_dicts:
     names.append(repo_dict['name'])
     plot_dict = {
-                 'value': repo_dict['stargazers_count'],
-                 'label': repo_dict['description'],
+                'value': repo_dict['stargazers_count'],
+                'label': str(repo_dict['description']),
                 }
     plot_dicts.append(plot_dict)
 
@@ -38,6 +38,5 @@ my_config.width = 1000
 chart = pygal.Bar(my_config, style=my_style)
 chart.title = 'Most-Starred Python Projects on GitHub'
 chart.x_labels = names
-
 chart.add('', plot_dicts)
-chart.render_in_browser().decode('utf-8')
+chart.render_in_browser()
