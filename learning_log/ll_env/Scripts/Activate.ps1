@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="d:\Python\Python_learn\ll_env"
+$env:VIRTUAL_ENV="D:\Python\Python_learn\learning_log\ll_env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name
