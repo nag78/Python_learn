@@ -14,7 +14,7 @@ class Entry(models.Model):
     """Инфрмация изученная пользователем по теме"""
     topic = models.ForeignKey(Topic, on_delete=models.PROTECT)
     text = models.TextField()
-    date_add = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'entries'
