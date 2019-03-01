@@ -1,8 +1,6 @@
 from random import randint as r
 
 
-
-
 def collatz(number):
     """Последовательность Коллатца."""
 
@@ -14,5 +12,5 @@ def collatz(number):
     return number
 
 
-for guess in range(1, 100):
+for guess in range(1, 1000):
     collatz(guess)
