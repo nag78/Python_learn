@@ -1,7 +1,7 @@
 theBoard = {
-            'top-L':'0','top-M':'0','top-R':'0',
-            'mid-L':'X','mid-M':'X','mid-R':' ',
-            'low-L':' ','low-M':' ','low-R':'X'
+            'top-L':' ','top-M':' ','top-R':' ',
+            'mid-L':' ','mid-M':' ','mid-R':' ',
+            'low-L':' ','low-M':' ','low-R':' '
             }
 
 def printBoard(board):
