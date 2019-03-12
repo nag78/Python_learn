@@ -1,6 +1,6 @@
 from collections import Counter
 
-stuff = {'rope': 1, 'gold coin': 42, 'torch': 6, 'dagger': 1, 'arrow': 12}
+stuff = {'rope': 1, 'gold coin': 42}
 dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
 def displayInventory(inventory):
