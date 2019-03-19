@@ -1,4 +1,4 @@
-## -*- coding: cp1251 -*-
+# -*- encoding: cp1251 -*-
 from re import compile as re_cmpl
 
 message = '''
