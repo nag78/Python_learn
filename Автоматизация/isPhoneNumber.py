@@ -1,3 +1,5 @@
+## -*- coding: cp1251 -*-
+
 def isPhoneNumber(text):
     if len(text) != 12:
         return False
@@ -16,7 +18,12 @@ def isPhoneNumber(text):
             return False
     return True
 
-print('415-555-4242 - это телефонный номер:')
-print(isPhoneNumber('415-555-4242'))
-print('Moshi moshi - это телефонный номер:')
-print(isPhoneNumber('Moshi moshi'))
+message = '''
+            Позвони мне завтра по номеру 415-555-1011.
+            415-555-9999 - это телефонный номер моего офиса.
+          '''
+for i in range(len(message)):
+    chunk = message[i:i+12]
+    if isPhoneNumber(chunk):
+        print('Найден телефонный номер: ' + chunk)
+print('Готово.')
