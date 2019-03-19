@@ -1,4 +1,4 @@
-
+# Исходная таблица.
 tableData = [
              ['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
@@ -10,7 +10,7 @@ def printTable(table):
     cols = len(table)                                                   # Количество столбцов
     rows = len(table[0])                                                # Количество строк
 
-    # Вычисление максимальной ширины столбца
+    # Вычисление максимальной ширины столбца по самой длинной строке
     col_width = []
     for col in table:
         col_width.append(len(sorted(col, key=len)[-1]))
