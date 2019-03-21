@@ -1,6 +1,8 @@
+# -*- coding: cp1251 -*-
 #! python3
 # phoneAndEmail.py - Находит телефонные номера и 
 # адреса электронной почты в буфере обмена
+
 
 import pyperclip, re
 
@@ -35,4 +37,10 @@ for groups in phoneRegex.findall(text):
 for groups in emailRegex.findall(text):
     matches.append(groups[0])
 
-# TODO: Скопировать результат в буфер обмена.
+# Копировать результат в буфер обмена.
+if len(matches) > 0:
+    pyperclip.copy('\n'.join(matches))
+    print('Скопировано в буфер обмена:')
+    print('\n'.join(matches))
+else:
+    print('Телефонные номера и адреса email не найдены.')
