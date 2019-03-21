@@ -12,7 +12,6 @@ phoneRegex = re.compile(r'''(
                              (\s|-|\.)                                   # разделитель
                              (\d{4})                                     # последние 4 цыфры
                              (\s*(ext|x|ext.)\s*(\d{2,5}))?              # добавочный номер
-
                             )''', re.VERBOSE)
 
 
@@ -24,6 +23,16 @@ emailRegex = re.compile(r'''(
                              (\.[a-zA-Z](2,4))                           # Домен верхнего уровня
                             )''', re.VERBOSE)
 
-# TODO: Найти соответствия в тексте, содержащемся в буфере обмена.
+# Поиск соответствия в тексте, содержащемся в буфере обмена.
+text = str(pyperclip.paste())
+matches = []
+for groups in phoneRegex.findall(text):
+    phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+    if groups[8] != '':
+        phoneNum += ' x' + groups[8]
+    matches.append(phoneNum)
+
+for groups in emailRegex.findall(text):
+    matches.append(groups[0])
 
 # TODO: Скопировать результат в буфер обмена.
