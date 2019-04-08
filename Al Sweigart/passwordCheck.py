@@ -11,9 +11,7 @@ import re
 
 
 def checkpass(password):
-    return len(password) > 8 and all(re.search(p, password) for p in ('[A-Z]',
-                                                                      '\d',
-                                                                      '[a-z]'))
+    return len(password) > 8 and all(re.search(p, password) for p in ('[A-Z]', '\d', '[a-z]'))
 
 
 text = str(pyperclip.paste())
