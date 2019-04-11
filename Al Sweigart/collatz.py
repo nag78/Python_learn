@@ -1,6 +1,3 @@
-from random import randint as r
-
-
 def collatz(number):
     """Последовательность Коллатца."""
 
