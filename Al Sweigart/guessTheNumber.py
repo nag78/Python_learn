@@ -15,8 +15,7 @@ for guessesTaken in range(1, 7):
     elif guess > secretNumber:
         print('Ваше число больше задуманного.')
     else:
-        break # Правильное число
-    
+        break  # Правильное число
 
 if guess == secretNumber:
     print('Верно! ' + str(secretNumber) + ' Попыток: ' + str(guessesTaken))
