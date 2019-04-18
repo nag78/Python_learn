@@ -7,5 +7,5 @@ def listToStr(list):
     return string
 
 
-spam = ['apples', 'bananas', 'tofu', 'cats']
+spam = ['apples', 'bananas', 'tofu', 'cats', 'python']
 print(listToStr(spam))
