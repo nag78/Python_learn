@@ -49,16 +49,16 @@ for quizNum in range(35):
     states = list(capitals.keys())
     random.shuffle(states)
 
-    # Организация цикла по всем 50 штатам,
+# Организация цикла по всем 50 штатам,
     # создание вопроса для каждого из них.
-    for questionNum in range(50):
-        # Получение правильных и неправильных вопросов и ответов
-        correctAnswer = capitals[states[questionNum]]
-        wrongAnswers = list(capitals.values())
-        del wrongAnswers[wrongAnswers.index(correctAnswer)]
-        wrongAnswers = random.sample(wrongAnswers, 3)
-        answerOptions = wrongAnswers + [correctAnswer]
-        random.shuffle(answerOptions)
+for questionNum in range(50):
+    # Получение правильных и неправильных вопросов и ответов
+    correctAnswer = capitals[states[questionNum]]
+    wrongAnswers = list(capitals.values())
+    del wrongAnswers[wrongAnswers.index(correctAnswer)]
+    wrongAnswers = random.sample(wrongAnswers, 3)
+    answerOptions = wrongAnswers + [correctAnswer]
+    random.shuffle(answerOptions)
 
-        # TODO: Записать варианты вопросов и ответов в файл билета
-        # TODO: Записать ключ ответа в файл.
+    # TODO: Записать варианты вопросов и ответов в файл билета
+    # TODO: Записать ключ ответа в файл.
