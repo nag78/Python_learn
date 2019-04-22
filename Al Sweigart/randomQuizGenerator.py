@@ -34,9 +34,20 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau',
 
 # Генерация 35 файлов билетов
 for quizNum in range(35):
-    # TODO: Создать файлы билетов и ключей ответов
+    # Создание файлов билетов.
+    quizFile = open('capitalsquiz%s.txt' % (quizNum + 1), 'w')
+    answerKeyFile = open('capitalsquiz_answer%s.txt' % (quizNum +
+                         1), 'w')
+    # Запись заголовков билетов.
+    quizFile.write('Имя:\n\nДата:\n\nКурс:\n\n')
+    quizFile.write((' ' * 15
+                    ) + 'Проверка знания столиц штатов (Билет %s)' % (
+                    quizNum + 1))
+    quizFile.write('\n\n')
 
-    # TODO: Перемешать порядок следования штатов
+    # Перемешивание порядка следования столиц штатов
+    states = list(capitals.keys())
+    random.shuffle(states)
 
     # TODO: Организовать цикл по всем 50 штатам,
     # TODO: создавая вопрос для каждого из них.
