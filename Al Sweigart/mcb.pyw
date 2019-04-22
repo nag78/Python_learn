@@ -13,8 +13,11 @@ import shelve, pyperclip, sys
 
 mcbShelf = shelve.open('mcb')
 
-# TODO: Сохранить содержимое буфера обмена
-# TODO: Сформировать список ключевых слов и загрузить
+# Сохранение содержимого буфера обмена
+if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
+    mcbShelf[sys.argv[2]] = pyperclip.paste()
+elif len(sys.argv) == 2:
+    # TODO: Сформировать список ключевых слов и загрузить
 # TODO: содержимое
 
 mcbShelf.close()
