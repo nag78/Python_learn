@@ -1,4 +1,4 @@
-## -*- coding: cp1251 -*-
+# -*- coding: cp1251 -*-
 
 
 def isPhoneNumber(text):
@@ -22,7 +22,8 @@ def isPhoneNumber(text):
 
 message = '''
             Позвони мне завтра по номеру 415-555-1011.
-            415-555-9999 - это телефонный номер моего офиса.
+            415-555-9999 - это телефонный
+            номер моего офиса.
           '''
 for i in range(len(message)):
     chunk = message[i:i+12]
