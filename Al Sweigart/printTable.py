@@ -7,8 +7,8 @@ tableData = [
 
 
 def printTable(table):
-    cols = len(table)                                                   # Количество столбцов
-    rows = len(table[0])                                                # Количество строк
+    cols = len(table)                                # Количество столбцов
+    rows = len(table[0])                             # Количество строк
 
     # Вычисление максимальной ширины столбца по самой длинной строке
     col_width = []
@@ -21,5 +21,6 @@ def printTable(table):
         for col in range(cols):
             result.append(table[col][row].rjust(col_width[col]))
         print('\t'.join(result))
+
 
 printTable(tableData)

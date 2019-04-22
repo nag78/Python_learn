@@ -1,5 +1,6 @@
 ## -*- coding: cp1251 -*-
 
+
 def isPhoneNumber(text):
     if len(text) != 12:
         return False
@@ -17,6 +18,7 @@ def isPhoneNumber(text):
         if not text[i].isdecimal():
             return False
     return True
+
 
 message = '''
             Позвони мне завтра по номеру 415-555-1011.
