@@ -7,6 +7,10 @@
 #               Загружает ключевое слово в буфер обмена.
 #               py.exe mcb.pyw list -
 #               Загружает все ключевые слова в буфер обмена.
+#               py.exe mcb.pyw delete <ключевое слово>
+#               Удаляет ключевое слово.
+#               py.exe mcb.pyw delete
+#               Удаляет все сохраненные ключевые слова.
 
 import shelve, pyperclip, sys
 
@@ -17,6 +21,7 @@ mcbShelf = shelve.open('mcb')
 if len(sys.argv) == 3:
     if sys.argv[1].lower() == 'save':
         mcbShelf[sys.argv[2]] = pyperclip.paste()
+    # Удаление ключевого слова
     elif sys.argv[1].lower() == 'delete' and sys.argv[2] in mcbShelf:
         mcbShelf.pop(sys.argv[2])
 
@@ -27,6 +32,7 @@ elif len(sys.argv) == 2:
         pyperclip.copy(str(list(mcbShelf.keys())))
     elif sys.argv[1] in mcbShelf:
         pyperclip.copy(mcbShelf[sys.argv[1]])
+    # Удаление всех ключевых слов
     if sys.argv[1].lower() == 'delete':
         mcbShelf.clear()
 
