@@ -5,8 +5,10 @@
 # результат выводится на экрран и в файл outfile.txt
 
 
-infile = open('d:\\Python\\Python_learn\\Al Sweigart\\MadLibs\\infile.txt', 'r')
-outfile = open('d:\\Python\\Python_learn\\Al Sweigart\\MadLibs\\outfile.txt', 'w')
+infile = open('d:\\Python\\Python_learn\\Al Sweigart\\MadLibs\\infile.txt',
+              'r')
+outfile = open('d:\\Python\\Python_learn\\Al Sweigart\\MadLibs\\outfile.txt',
+               'w')
 inStr = infile.read()
 
 
