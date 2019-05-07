@@ -20,13 +20,21 @@ datePattern = re.compile(r"""^(.*?) # весь текст перед датой
             ((19|20)\d\d)      # четырк цифры года
             (.*?)$             # весь текст после даты
             """, re.VERBOSE)
-# TODO: Организовать цикл по файлам в рабочем
+# Организация цикла по файлам в рабочем
 # каталоге
+for amerFilename in os.listdir('.'):
+    mo = datePattern.search(amerFilename)
+    # Пропуск файлов с именами, без дат
+    if mo == None:
+        continue
+    # Получение отдельных частей имен файлов
+    beforePart = mo.group(1)
+    monthPart = mo.group(2)
+    dayPart = mo.group(4)
+    yearPart = mo.group(6)
+    afterPart = mo.group(8)
 
-# TODO: Пропустить файлы с именами, не содержа-
-# щих дат.
 
-# TODO: Получить отдельные части имен файлов.
 
 # TODO: Сформировать имена, соответствующие
 # европейскому стилю
