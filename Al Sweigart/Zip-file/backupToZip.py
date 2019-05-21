@@ -22,7 +22,10 @@ def backupToZip(folder):
             break
         number = number + 1
 
-        # TODO: Создать zip file
+        # Создать zip file
+        print('Создается файл %s...' % (zipFilename))
+        backupZip = zipfile.ZipFile(zipFilename, 'w')
+
         # TODO: Обойти все дерево папки и
         # сжать файлы, содержащиеся в
         # каждой папке.
