@@ -17,12 +17,15 @@ def copyPdf(source, target):
     # Обход папки source
     for folderName, subfolders, filenames in os.walk(source):
 
-        print(str(folderName))
+        # print('Copy from ...' + str(folderName))
+        for subfolder in subfolders:
+            print('Copy from ...' + str(folderName) + str(subfolder))
         for filename in filenames:
-            dst = os.path.join(target, filename)
-            src = os.path.join(source, filename)
-            print('Copy...' + str(src)
-            shutil.copy(src, dst)
+            if filename.endswith('.pdf'):
+                dst = os.path.join(target, filename)
+                src = os.path.join(folderName, filename)
+                print('Copy...' + str(src))
+                shutil.copy(src, dst)
 
 
-copyPdf('C:\\1\\', 'C:\\2\\')
+copyPdf('D:\\Zona Downloads', 'D:\\PDF')
