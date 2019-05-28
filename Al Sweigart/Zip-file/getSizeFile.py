@@ -15,6 +15,6 @@ def getSizeFile(fldr):
         for file in files:
             path = os.path.join(folder, file)
             if os.path.getsize(path) > 104857600:
-                print(str(file))
+                print(str(path) + ' - ' + str((os.path.getsize(path))/1048576) + ' Мб')
 
-getSizeFile('C:\\')
+getSizeFile('D:\\PDF')
