@@ -19,7 +19,8 @@ def copyPdf(source, target):
 
         # print('Copy from ...' + str(folderName))
         for subfolder in subfolders:
-            print('Copy from ...' + str(folderName) + str(subfolder))
+            # print('Copy from ...' + str(folderName) + str(subfolder))
+            continue
         for filename in filenames:
             if filename.endswith('.pdf'):
                 dst = os.path.join(target, filename)
@@ -28,4 +29,4 @@ def copyPdf(source, target):
                 shutil.copy(src, dst)
 
 
-copyPdf('D:\\Zona Downloads', 'D:\\PDF')
+copyPdf('D:\\Downloads', 'D:\\PDF')
