@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "d:\Python\Python_learn\Al Sweigart\Zip-file\errorExample2.py", line 8, in <module>
+    raise Exception('Это сообщение об ошибке.')
+Exception: Это сообщение об ошибке.
