@@ -5,9 +5,14 @@
 
 import webbrowser
 import sys
+import pyperclip
 
 
 if len(sys.argv) > 1:
     # Получение адреса из команндной строки
     address = ' '.join(sys.argv[1:])
-# TODO: Получить адрес из буффера обмена.
+else:
+    # Получение адреса из буфера обмена.
+    address = pyperclip.paste()
+
+webbrowser.open('https://www.google.com/maps/place/' + address)
