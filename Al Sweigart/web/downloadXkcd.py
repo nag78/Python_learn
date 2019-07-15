@@ -16,8 +16,18 @@ while not url.endswith('#'):
     res.raise_for_status()
 
     soup = bs4.BeautifulSoup(res.text)
-    #TODO: Найти URL- адрес изображения комикса
-    #TODO: Сохранить картинку в папке ./xkcd.
+    # Найти URL- адрес изображения комикса
+    comicElem = soup.select('#comic img')
+    if comicElem == []:
+        print('Не удалось найти изображение комикса.')
+    else:
+        comicUrl = comicElem[0].get('src')
+
+        # Сохранить картинку в папке ./xkcd.
+        print('Загружается изображение %s...' % (comicUrl))
+        res = requests.get(comicUrl)
+        res.raise_for_status()
+
     #TODO: Получить URL-адрес кнопки Prev.
 
 print('Готово!')
