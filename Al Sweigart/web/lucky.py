@@ -17,7 +17,7 @@ res.raise_for_status()
 
 
 # Извлечь перввые несколько найденных ссылок
-soup = bs4.BeautifulSoup(res.text, 'html.parser')
+soup = bs4.BeautifulSoup(res.text, 'lxml')
 
 # Открыть отдельную вкладку для каждого результата
 linkElems = soup.select('.r a')
