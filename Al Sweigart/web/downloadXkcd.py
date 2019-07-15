@@ -1,4 +1,5 @@
 # -*- coding: cp1251 -*-
+
 #! python3
 # downloadXkcd.py - Загружает все комиксы с XKCD.
 
@@ -22,9 +23,9 @@ while not url.endswith('#'):
         print('Не удалось найти изображение комикса.')
     else:
         comicUrl = comicElem[0].get('src').strip("http://")
-        comicUrl="http://"+comicUrl
+        comicUrl = "http://"+comicUrl
         if 'xkcd' not in comicUrl:
-            comicUrl=comicUrl[:7]+'xkcd.com/'+comicUrl[7:]
+            comicUrl = comicUrl[:7]+'xkcd.com/'+comicUrl[7:]
 
         # Загрузить картинку в папке ./xkcd.
         print('Загружается изображение %s...' % (comicUrl))
@@ -36,7 +37,7 @@ while not url.endswith('#'):
             imageFile.write(chunk)
         imageFile.close()
 
-    #Получить URL-адрес кнопки Prev.
+    # Получить URL-адрес кнопки Prev.
     prevLink = soup.select('a[rel="prev"]')[0]
     url = 'http://xkcd.com' + prevLink.get('href')
 
