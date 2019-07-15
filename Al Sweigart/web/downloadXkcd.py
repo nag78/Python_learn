@@ -15,15 +15,18 @@ while not url.endswith('#'):
     res = requests.get(url)
     res.raise_for_status()
 
-    soup = bs4.BeautifulSoup(res.text)
+    soup = bs4.BeautifulSoup(res.text, 'lxml')
     # Найти URL- адрес изображения комикса
     comicElem = soup.select('#comic img')
     if comicElem == []:
         print('Не удалось найти изображение комикса.')
     else:
-        comicUrl = comicElem[0].get('src')
+        comicUrl = comicElem[0].get('src').strip("http://")
+        comicUrl="http://"+comicUrl
+        if 'xkcd' not in comicUrl:
+            comicUrl=comicUrl[:7]+'xkcd.com/'+comicUrl[7:]
 
-        # Сохранить картинку в папке ./xkcd.
+        # Загрузить картинку в папке ./xkcd.
         print('Загружается изображение %s...' % (comicUrl))
         res = requests.get(comicUrl)
         res.raise_for_status()
