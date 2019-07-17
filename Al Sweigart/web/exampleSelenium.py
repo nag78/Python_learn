@@ -1,4 +1,3 @@
-# -*- coding: cp1251 -*-
 
 
 from selenium import webdriver
@@ -20,4 +19,10 @@ type(linkElem)
 linkElem.click()
 
 # Заполнение полей
-browser.get('gmail.com')
+browser.get('http://gmail.com')
+emailElem = browser.find_element_by_id('identifierId')
+emailElem.send_keys = ('fake_email@gmail.com')
+emailElem.submit()
+passwordElem = browser.find_element_by_id('Passwd')
+passwordElem.send_keys('123456')
+passwordElem.submit()
