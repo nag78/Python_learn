@@ -1,11 +1,11 @@
 # -*- coding: cp1251 -*-
-import openpyxl.utils
+
 from openpyxl import load_workbook
-wb = load_workbook(filename = 'example.xlsx')
+wb = load_workbook(filename='example.xlsx')
 sheet = wb.active
 c = sheet['B1']
-print('Строка ' + str(c.row) + ' Столбец ' + str(c.column) + ': ' +
-      str(c.value))
+print('Строка ' + str(c.row) + ' Столбец ' + str(c.column) +
+      ': ' + str(c.value))
 time = sheet['A1'].value
 print(time)
 
@@ -19,7 +19,5 @@ hr = sheet.calculate_dimension()
 print(str(hr))
 
 hr2 = sheet.max_row
-hc =sheet.max_column
+hc = sheet.max_column
 print(str(hr2) + ' : ' + str(hc))
-
-
