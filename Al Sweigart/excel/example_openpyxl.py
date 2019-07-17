@@ -5,7 +5,7 @@ wb = load_workbook(filename='example.xlsx')
 sheet = wb.active
 c = sheet['B1']
 print('Строка ' + str(c.row) + ' Столбец ' + str(c.column) +
-      ': ' + str(c.value))
+      ' : ' + str(c.value))
 time = sheet['A1'].value
 print(time)
 
@@ -21,3 +21,10 @@ print(str(hr))
 hr2 = sheet.max_row
 hc = sheet.max_column
 print(str(hr2) + ' : ' + str(hc))
+
+ts = tuple(sheet['A1':'C7'])
+# print(str(ts))
+for rowOfCellObjects in sheet['A1':'C7']:
+    for cellObj in rowOfCellObjects:
+        print(cellObj.coordinate, cellObj.value)
+    print('---Конец строки---')
