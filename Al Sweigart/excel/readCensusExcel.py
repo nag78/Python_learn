@@ -6,8 +6,9 @@ from Lib.pprint import pprint
 
 print('Открытие рабочей книги...')
 wb = openpyxl.load_workbook('censuspopdata.xlsx')
-sheet = wb.get_sheet_by_name('Population by \
-                             Census Tract')
+sheets = wb.sheetnames
+print(sheets)
+sheet = wb[sheets[0]]
 countyData = {}
 # TODO: Заполнить словарь countyData данными о
 # TODO: численности населения и
