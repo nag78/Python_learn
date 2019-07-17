@@ -1,7 +1,7 @@
 # -*- coding: cp1251 -*-
 
 import openpyxl
-from Lib.pprint import pprint
+import Lib.pprint
 
 
 print('Открытие рабочей книги...')
@@ -31,6 +31,11 @@ for row in range(2, sheet.max_row + 1):
     # переписного района.
     countyData[state][county]['pop'] += int(pop)
 
-# TODO: Открыть новый текстовый файл и
-# TODO: записать в него содержимое
-# TODO: словоря countyData.
+# Открыть новый текстовый файл и
+# записать в него содержимое
+# словоря countyData.
+print('Запись результатов...')
+resultFile = open('county2010.py', 'w')
+resultFile.write('allData = ' + Lib.pprint.pformat(countyData))
+resultFile.close()
+print('Готово!')
