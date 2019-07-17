@@ -1,15 +1,12 @@
+# -*- coding: cp1251 -*-
+
 from openpyxl import load_workbook
 wb = load_workbook(filename = 'example.xlsx')
-sheets = wb.sheetnames
-print(sheets)
+sheet = wb.active
+c = sheet['B1']
+print('Строка ' + str(c.row) + ' Столбец ' + str(c.column) + ': ' +
+      str(c.value))
+time = sheet['A1'].value
+print(time)
 
-sheet = wb[sheets[2]]
-print(sheet)
-ts = type(sheet)
-print(str(ts))
-st = sheet.title
-print(str(st))
-
-anotherSheet = wb.active
-st = anotherSheet.title
-print(str(st))
+print('Ячейка ' + str(c.coordinate) + ' : ' + str(c.value))
