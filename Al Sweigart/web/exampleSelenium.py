@@ -14,3 +14,7 @@ try:
     print('Найден элемент <%s> с данным именем класса!' % (elem.tag_name))
 except:
     print('Не удалось найти элемент с данным именем класса.')
+
+linkElem = browser.find_element_by_link_text('Read for Free')
+type(linkElem)
+linkElem.click()
