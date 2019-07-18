@@ -13,7 +13,7 @@ font = Font(name='Calibri',
 
 wb = openpyxl.Workbook()
 ws = wb.active
-row = ws.row_dimensions['1']
+col = ws.column_dimensions['1']
 ws['A1'].value = 'Здравствуй, мир!'
-row.font = font
+col.font = font
 wb.save('styled.xlsx')
