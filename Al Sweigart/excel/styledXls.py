@@ -1,9 +1,19 @@
 import openpyxl
 from openpyxl.styles import Font
 
+
+font = Font(name='Calibri',
+            size=24,
+            bold=True,
+            italic=True,
+            vertAlign=None,
+            underline='none',
+            strike=False,
+            color='FF000000')
+
 wb = openpyxl.Workbook()
-sheet = wb.active
-a = sheet.column_dimensions['A']
-a.font = Font(size=24, italic=True)
-a1 = sheet['A1'] = 'Здравствуй, мир!'
+ws = wb.active
+row = ws.row_dimensions['1']
+ws['A1'].value = 'Здравствуй, мир!'
+row.font = font
 wb.save('styled.xlsx')
