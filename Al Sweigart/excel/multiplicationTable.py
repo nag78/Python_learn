@@ -4,7 +4,7 @@ import openpyxl
 # откроем Рабочую книгу
 wb = openpyxl.Workbook()
 ws = wb.active
-# TODO: сделать вызов factor через аргумент строки
+# TODO: сделать получение factor через аргумент строки
 factor = 6
 # Разметка таблицы
 
