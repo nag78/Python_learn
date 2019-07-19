@@ -2,7 +2,7 @@
 
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
-from datetime import *
+import datetime
 
 # определяем стили
 font = Font(name='Calibri',
@@ -125,7 +125,8 @@ dims = {}
 for row in ws.rows:
     for cell in row:
         if cell.value:
-            dims[cell.column] = max((dims.get(cell.column, 0), len(cell.value)))
+            dims[cell.column] = max((dims.get(cell.column, 0),
+                                     len(cell.value)))
 for col, value in dims.items():
     # value * коэфициент
     ws.column_dimensions[col].width = value * 1.5
