@@ -19,17 +19,14 @@ for col in ws.columns:
     cols += 1
 tabl = [[ws.cell(column=i, row=j).value
         for j in range(1, rows)] for i in range(1, cols)]
+print(tabl)
+tabl1 = []
 
+for i in range(1, cols):
+    for j in range(1, rows):
+        tabl1[i][j] = tabl[j][i]
 
-col = 1
-row = 1
-
-for subtabl in tabl:
-    for index, value in enumerate(subtabl):
-        ws1.cell(column=col+index, row=row).value = value
-        col += 1
-
-
+print(tabl1)
 fileout = 'inv' + filein
 print(fileout)
 wb1.save(filename=fileout)
