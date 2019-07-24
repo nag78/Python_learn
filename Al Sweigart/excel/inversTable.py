@@ -21,10 +21,13 @@ tabl = [[ws.cell(column=i, row=j).value
         for j in range(1, rows)] for i in range(1, cols)]
 print(tabl)
 
-
-for i in range(1, cols):
-    for j in range(1, rows):
-            ws1.cell(column=j, row=i).value = tabl[i][j]
+tabl = list(zip(*tabl))
+col = 1
+row = 1
+for subtable in tabl:
+    for index, value in enumerate(subtable):
+        ws1.cell(column=col+index, row=row).value = value
+    row += 1
 
 
 fileout = 'inv' + filein
