@@ -19,10 +19,10 @@ for col in ws.columns:
     cols += 1
 tabl = [[ws.cell(column=i, row=j).value
         for j in range(1, rows)] for i in range(1, cols)]
-print(tabl)
+# print(tabl)
 
 tabl1 = list(zip(*tabl))
-print(tabl1)
+# print(tabl1)
 col = 1
 row = 1
 for subtable in tabl1:
