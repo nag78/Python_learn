@@ -16,7 +16,7 @@ def chooseCave():
         cave = input()
     return cave
 
-def checkCave():
+def checkCave(choosenCave):
     print('Вы приближаетесь к пещере...')
     time.sleep(2)
     print('Её темнота заставляет вас дрожать от страха...')
@@ -26,7 +26,7 @@ def checkCave():
     time.sleep(2)
 
     friendlyCave = random.randint(1,2)
-    if chooseCave() == str(friendlyCave):
+    if choosenCave == str(friendlyCave):
         print('...делиться с вами своими сокровищами!')
     else:
         print('...момментально вас съедает!')
